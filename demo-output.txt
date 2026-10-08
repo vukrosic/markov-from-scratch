@@ -1,0 +1,99 @@
+
+=== step1_coin.py
+one player, share of heads
+        10 flips:  50.000%
+       100 flips:  48.000%
+     1,000 flips:  50.700%
+    10,000 flips:  49.740%
+   100,000 flips:  49.889%
+ 1,000,000 flips:  50.033%
+1,000 players, each flipping n times: lowest and highest share of heads
+     10 flips:   0.0% to  90.0%   gap  90.0 points
+    100 flips:  35.0% to  65.0%   gap  30.0 points
+  1,000 flips:  44.7% to  54.9%   gap  10.2 points
+ 10,000 flips:  48.3% to  51.7%   gap   3.5 points
+
+=== step2_weather.py
+start on a day of sun: share of sunny days
+        10 days:  90.000%
+       100 days:  92.000%
+     1,000 days:  88.700%
+    10,000 days:  83.760%
+   100,000 days:  83.201%
+ 1,000,000 days:  83.229%
+start on a day of rain: share of sunny days
+        10 days:  70.000%
+       100 days:  81.000%
+     1,000 days:  85.000%
+    10,000 days:  83.380%
+   100,000 days:  83.361%
+ 1,000,000 days:  83.384%
+the day after sun: sunny 90.0% of 832,448 times
+the day after rain: sunny 49.8% of 167,552 times
+1,000 worlds, n days each: lowest and highest share of sunny days (linked | a coin with 5 sunny sides of 6)
+    100 days:  61.0% to  98.0%  |   72.0% to  92.0%
+  1,000 days:  76.5% to  88.3%  |   79.5% to  86.7%
+ 10,000 days:  81.5% to  85.1%  |   82.1% to  84.5%
+
+=== step3_settle.py
+day   sunny share, all worlds start rainy   all start sunny   gap
+  0                       0.0000%         100.0000%   100.0000
+  1                      50.0000%          90.0000%    40.0000
+  2                      70.0000%          86.0000%    16.0000
+  3                      78.0000%          84.4000%     6.4000
+  4                      81.2000%          83.7600%     2.5600
+  5                      82.4800%          83.5040%     1.0240
+ 10                      83.3246%          83.3351%     0.0105
+ 20                      83.3333%          83.3333%     0.0000
+each day the gap is multiplied by 0.40
+the gap is under a tenth of a point on day 8
+balance: sunny share x 0.1 = rainy share x 0.5  ->  sunny share 83.3333% = 5/6
+quiz chain: balance says 40.0%, a million days give 39.91%
+
+=== step4_count.py
+Markov 1913: vowels 43.19% of 20,000 letters
+  vowel after a vowel 12.8%   vowel after a consonant 66.3%
+  vowel-vowel pairs: 1,104 counted; 3,731 if each letter ignored the one before
+  balance of his two chances: 43.19% vowels; he counted 43.19%
+shakespeare.txt: first 20,000 letters, starting "firstcitizenbeforeweproceedanyfurtherhea"
+  vowels 7,720 = 38.60%
+  vowel after a vowel 17.5%   vowel after a consonant 51.8%
+  vowel-vowel pairs: 1,354 counted; 2,980 if each letter ignored the one before
+  balance of the two chances: 38.60% vowels; counted 38.60%
+  after    100 letters: 40.00% vowels
+  after  1,000 letters: 39.20% vowels
+  after  5,000 letters: 38.24% vowels
+  after 20,000 letters: 38.60% vowels
+  200 blocks of 100 letters: 30 to 46 vowels; typical distance from the average 2.75
+  a coin with the same share would give 4.87
+
+=== step5_break.py
+islands, share of time on A after 100,000 steps: {'A': '50.2%', 'B': '50.0%', 'C': '0.0%', 'D': '0.0%'}
+with a bridge, after 1,000,000 steps: {'A': '25.2%', 'B': '25.4%', 'C': '25.2%', 'D': '25.5%'}
+ping-pong: share of the crowd on sun, day by day: [1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0]  share of time after 1,001 days: 49.95%
+sticky chain, 200 worlds: lowest and highest share of sunny days
+   1,000 days:   0.1% to 100.0%
+  10,000 days:  19.3% to  89.2%
+ 100,000 days:  37.4% to  65.1%
+
+=== step6_rank.py
+links only, start on news:         wiki 38.7%  news 19.4%  shop 16.1%  blog 12.9%  maps 12.9%  club 0.0%  fans 0.0%
+links only, start on club:         club 50.0%  fans 50.0%  news 0.0%  wiki 0.0%  shop 0.0%  blog 0.0%  maps 0.0%
+with the jump, start on news :     wiki 26.4%  fans 14.3%  club 14.3%  news 13.7%  shop 12.0%  blog 9.6%  maps 9.6%
+with the jump, start on club :     wiki 26.5%  fans 14.2%  club 14.2%  news 13.7%  shop 12.1%  maps 9.7%  blog 9.6%
+the crowd, still after 63 steps:  wiki 26.4%  club 14.3%  fans 14.3%  news 13.7%  shop 12.1%  blog 9.6%  maps 9.6%
+largest difference between the surfer and the crowd: 0.04 points
+links pointing at each page: {'news': 2, 'wiki': 4, 'shop': 2, 'blog': 1, 'maps': 1, 'club': 1, 'fans': 1}
+
+=== step7_write.py
+the text: 1,053,728 letters and spaces, 12,847 different words
+memory  states seen  real words  copied   sample
+   0            1     12.7%     0.0%     o hwtruows dr ooaiieuechrm mwdytaopithaec eh ynsdfrddmrr lra e oteu 
+   1           27     24.3%     0.0%    nring beat myomouther aspe s vothoremy mant to to n tht f ingusho t m
+   2          546     41.4%     0.0%   ll th art ot criching boy higlavere forince upone prith thateress pere
+   3        5,198     69.4%     0.0%   ed as the of him preven a humberland fear and of i thee to had my shak
+   4       24,191     89.8%     0.0%   t sends hortensio comes you all upon these a volumnia o my deatherefor
+   6      182,805     99.2%     0.0%   servingman what i should it does weak and king edward iv thus in me th
+  10      753,857     99.9%    14.7%   zen care for us look to have it prest with my cousins you mistakings s
+
+all checks passed
